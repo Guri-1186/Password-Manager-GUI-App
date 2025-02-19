@@ -1,39 +1,63 @@
-# Password-Manager-GUI-App
+# Password Manager
 
-## Overview
-
-This is a simple password manager built using Python and Tkinter. It allows users to generate and store passwords securely in a local text file (`data.txt`). The passwords are automatically copied to the clipboard for easy pasting.
+A simple password manager built using Python and Tkinter. It allows users to generate strong passwords, save them securely in a JSON file, and retrieve saved credentials.
 
 ## Features
 
-- Generate strong passwords with a mix of letters, numbers, and symbols.
-- Save website credentials (Website, Email/Username, Password) to `data.txt`.
-- Copy the generated password to the clipboard for quick access.
-- Simple and user-friendly graphical interface.
-
-## Requirements
-
-- Python 3.x
-- Required libraries:
-  - `tkinter` (built-in with Python)
-  - `random` (built-in with Python)
-  - `pyperclip` (install using `pip install pyperclip`)
+- **Generate Secure Passwords**: Creates a random password with letters, numbers, and symbols.
+- **Save Credentials**: Stores website credentials (email & password) in `data.json`.
+- **Retrieve Saved Credentials**: Quickly look up stored credentials using the website name.
 
 ## Installation
 
-1. Clone the repository or download the script.
-2. Install dependencies using:
-   ```sh
-   pip install pyperclip
-   ```
-3. Run the script:
-   ```sh
-   python password_manager.py
-   ```
+### Prerequisites
+
+Ensure you have Python installed on your system. You also need the following libraries:
+
+```sh
+pip install pyperclip
+```
+
+## Project Structure
+
+```
+password-manager/
+│── main.py             # GUI and event handling
+│── password_manager.py # Logic for password generation and data storage
+│── data.json           # Stored credentials (auto-created)
+│── logo.png            # App logo
+│── README.md           # Project documentation
+```
 
 ## Usage
 
-1. Enter the website name.
-2. Enter the email or username.
-3. Click "Generate Password" to create a strong password.
-4. Click "Add" to save the credentials.
+### Running the Application
+
+Run the following command in your terminal:
+
+```sh
+python main.py
+```
+
+### Functionality
+
+1. **Generate Password**
+   - Click `Generate Password` to create a strong password.
+   - The password will be copied to the clipboard.
+2. **Save Credentials**
+   - Enter the website, email, and generated password.
+   - Click `Add` to save the credentials.
+3. **Search for Saved Credentials**
+   - Enter a website name and click `Search` to retrieve saved credentials.
+
+## File Descriptions
+
+- `main.py`: Handles the graphical user interface (GUI) using Tkinter.
+- `password_manager.py`: Contains logic for generating passwords, saving data, and retrieving credentials.
+- `data.json`: Stores saved passwords in JSON format.
+- `logo.png`: An optional image used as the application’s logo.
+
+## Notes
+
+- If `data.json` is missing, it will be created automatically.
+- Data is stored in plain text JSON format. Consider encrypting it for added security.
